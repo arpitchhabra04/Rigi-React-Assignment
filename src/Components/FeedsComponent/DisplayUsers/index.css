@@ -1,11 +1,11 @@
 .single_user_container {
-  width: 200px;
+  width: 20wh;
   height: 30px;
   margin: 20px;
   display: flex;
 }
 .single_user_image img {
-  max-width: 30px;
-  max-height: 30px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
 }

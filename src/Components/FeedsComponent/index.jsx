@@ -30,7 +30,6 @@ export default function Feeds() {
       .then((response) => response.json())
       .then((data) => {
         setUsers(data);
-        console.log(data);
       });
   };
 
