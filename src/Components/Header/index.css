@@ -3,6 +3,8 @@
   justify-content: center;
   min-width: 10%;
   background-color: hsl(0, 6%, 88%);
+  /* position: fixed; */
+  width: 100%;
 }
 
 .search-input {

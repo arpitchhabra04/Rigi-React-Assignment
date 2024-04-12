@@ -1,5 +1,5 @@
 .feed_post_container {
-  border: 1px solid red;
+  /* border: 1px solid black; */
   display: flex;
   max-width: 454px;
   max-height: 161px;
@@ -8,8 +8,14 @@
 .user_image img {
   max-width: 30px;
   max-height: 30px;
+  border-radius: 50%;
 }
 
 .user_detail {
   margin-left: 38.6px;
+}
+
+.user_title {
+  font-weight: 700;
+  margin-bottom: 10px;
 }

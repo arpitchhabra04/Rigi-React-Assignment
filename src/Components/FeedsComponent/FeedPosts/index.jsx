@@ -16,15 +16,13 @@ export default function FeedPosts({ post }) {
     }
   }, [post]);
 
-  console.log("posts", post);
-  console.log({ userName, text, attachments }, "asdas");
   return (
     <div className="feed_post_container">
       <div className="user_image">
         <img src={profilePictureUrl} />
       </div>
       <div className="user_detail">
-        <div>{userName}</div>
+        <div className="user_title">{userName}</div>
         <div>{text}</div>
       </div>
     </div>
