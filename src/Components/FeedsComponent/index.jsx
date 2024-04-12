@@ -1,7 +1,14 @@
+import { useState, useEffect, lazy, Suspense } from "react";
+import "./index.css";
+// import FeedPosts from lazy("./FeedPosts");
+
+const FeedPosts = lazy(() => import("./FeedPosts"));
 export default function Feeds() {
+  const [posts, setPosts] = useState([]);
+
   const fetchFeeds = () => {
     fetch(
-      "https://rigi-react-assignment-ii-server-production.up.railway.app/api/posts/1",
+      "https://rigi-react-assignment-ii-server-production.up.railway.app/api/posts",
       {
         method: "GET",
         headers: {
@@ -12,9 +19,20 @@ export default function Feeds() {
     )
       .then((response) => response.json())
       .then((data) => {
+        setPosts(data.data);
         console.log(data);
       });
   };
-  fetchFeeds();
-  return <div>From Feed</div>;
+
+  useEffect(() => {
+    fetchFeeds();
+  }, []);
+
+  return (
+    <div className="main_feed_container">
+      {posts.map((post, i) => (
+        <FeedPosts post={post} />
+      ))}
+    </div>
+  );
 }

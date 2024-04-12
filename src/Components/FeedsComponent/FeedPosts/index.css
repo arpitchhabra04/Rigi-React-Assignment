@@ -1,0 +1,15 @@
+.feed_post_container {
+  border: 1px solid red;
+  display: flex;
+  max-width: 454px;
+  max-height: 161px;
+  padding: 20px;
+}
+.user_image img {
+  max-width: 30px;
+  max-height: 30px;
+}
+
+.user_detail {
+  margin-left: 38.6px;
+}
