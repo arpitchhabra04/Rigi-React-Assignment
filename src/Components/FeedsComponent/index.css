@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-evenly;
   gap: 100px;
+  margin-left: 20%;
   /* flex-direction: column; */
   /* grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(1, 1fr); */
@@ -11,4 +12,9 @@
 }
 .member-title {
   margin: 20px;
+}
+
+.posts_container {
+  border: 1px solid hsl(0, 21%, 89%);
+  max-width: 45%;
 }

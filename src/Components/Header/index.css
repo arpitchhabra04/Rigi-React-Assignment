@@ -2,13 +2,15 @@
   display: flex;
   justify-content: center;
   min-width: 10%;
-  background-color: hsl(0, 6%, 88%);
+  background-color: hsl(0, 21%, 89%);
   /* position: fixed; */
   width: 100%;
 }
 
 .search-input {
   margin: 20px;
-  min-width: 30px;
+  width: 50wh;
+  height: 20px;
   border-radius: 12px;
+  padding-left: 15px;
 }

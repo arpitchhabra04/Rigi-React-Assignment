@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import "./index.css";
+import { Link, useNavigate } from "react-router-dom";
 import Attachments from "./DisplayAttachments";
+import SpecificPost from "../../PostComponent";
 
 export default function FeedPosts({ post }) {
   const [userName, setUserName] = useState("");
@@ -22,6 +24,7 @@ export default function FeedPosts({ post }) {
   useEffect(() => {
     filterAttachments();
   }, [attachments]);
+
   const filterAttachments = () => {
     let filteredImgs = attachments.filter((attach) => attach.type === "image");
     let filteredVideos = attachments.filter(
@@ -31,9 +34,16 @@ export default function FeedPosts({ post }) {
     setVideos(filteredVideos);
   };
 
+  let navigate = useNavigate();
+
+  const handlePostClick = (id) => {
+    localStorage.setItem("scrollPosition", window.pageYOffset);
+    navigate(`/${id}`);
+  };
+
   return (
     <div className="feed_post_container">
-      <div className="user_image">
+      <div className="user_image" onClick={() => handlePostClick(post.id)}>
         <img src={profilePictureUrl} />
       </div>
       <div className="user_detail">
