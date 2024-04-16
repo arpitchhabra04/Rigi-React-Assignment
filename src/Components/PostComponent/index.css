@@ -5,7 +5,8 @@
   border: 1px solid hsl(0, 21%, 89%);
   margin: 0% 10% 0% 10%;
   padding: 2%;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
 }
 .back-arrow {
   padding: 20px;
