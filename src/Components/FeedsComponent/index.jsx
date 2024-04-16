@@ -11,6 +11,8 @@ export default function Feeds({ searchValue }) {
   const [page, setPage] = useState(1);
   const [morePage, setMorePage] = useState(true);
   const [debounceTimer, setDebounceTimer] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+
   const parentRef = useRef(null);
   const url =
     "https://rigi-react-assignment-ii-server-production.up.railway.app/api";
@@ -21,12 +23,14 @@ export default function Feeds({ searchValue }) {
       Authorization: "XM0ooo4EG8puK9EPQ16M3KGxSA3ZsCKS",
     },
   };
-  console.log("from posts", { searchedPosts, posts });
+
   const fetchFeeds = () => {
+    setIsLoading(true);
     fetch(`${url}/posts?page=${page}`, header)
       .then((response) => response.json())
       .then((data) => {
         setMorePage(data.pagination.hasMore);
+        setIsLoading(false);
         handleScrollPosition();
         const fetchedPosts = data.data || [];
         setPosts([...posts, ...fetchedPosts]);
@@ -35,20 +39,26 @@ export default function Feeds({ searchValue }) {
   };
 
   const fetchUsers = () => {
+    setIsLoading(true);
     fetch(url + "/users", header)
       .then((response) => response.json())
       .then((data) => {
+        setIsLoading(false);
         setUsers(data);
       });
   };
 
   const fetchSearch = (key) => {
+    setIsLoading(true);
     fetch(`${url}/posts?query=${key}`, header)
       .then((response) => response.json())
       .then((data) => {
         // console.log(data);
 
         data.length > 0 ? setSearchedPosts(data) : setSearchedPosts([]);
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   };
 
@@ -93,7 +103,10 @@ export default function Feeds({ searchValue }) {
       const { scrollTop, clientHeight, scrollHeight } =
         document.documentElement;
       if (scrollTop + clientHeight >= scrollHeight - 20) {
-        if (morePage) fetchFeeds();
+        if (morePage) {
+          fetchFeeds();
+          setIsLoading(true);
+        }
       }
     };
 
@@ -129,8 +142,8 @@ export default function Feeds({ searchValue }) {
         {(searchedPosts.length > 0 ? searchedPosts : posts).map((post, i) => (
           <FeedPosts post={post} key={i} />
         ))}
+        {isLoading && <div className="loading-indicator">Loading...</div>}
       </div>
-
       <div className="users-container">
         <h3 className="member-title">Members</h3>
         {users.map((user) => (

@@ -16,3 +16,9 @@
 .users-container {
   /* margin-right: 10%; */
 }
+
+.loading-indicator {
+  text-align: center;
+  padding: 30px;
+  font-size: large;
+}

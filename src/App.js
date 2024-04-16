@@ -10,7 +10,7 @@ const SpecificPost = lazy(() => import("./Components/PostComponent"));
 export default function App() {
   const [searchValue, setSearchValue] = useState("");
   const { theme } = useContext(ThemeContext);
-  console.log("themee", theme);
+
   return (
     <div className={`App ${theme}`}>
       <Header searchValue={searchValue} setSearchValue={setSearchValue} />
