@@ -3,7 +3,8 @@
   justify-content: center;
   min-width: 10%;
   background-color: hsl(0, 21%, 89%);
-  /* position: fixed; */
+  /* width: 100%;
+  top: 0; */
   width: 100%;
 }
 
@@ -13,4 +14,12 @@
   height: 20px;
   border-radius: 12px;
   padding-left: 15px;
+}
+
+.theme-button {
+  position: absolute;
+  top: 23px;
+  left: 16px;
+  border-radius: 12px;
+  height: 25px;
 }

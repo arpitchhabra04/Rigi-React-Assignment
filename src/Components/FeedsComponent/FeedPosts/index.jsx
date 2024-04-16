@@ -47,7 +47,9 @@ export default function FeedPosts({ post }) {
         <img src={profilePictureUrl} />
       </div>
       <div className="user_detail">
-        <div className="user_title">{userName}</div>
+        <div className="user_title" onClick={() => handlePostClick(post.id)}>
+          {userName}
+        </div>
         <div>{text}</div>
         {attachments.length > 0 && <Attachments imgs={imgs} videos={videos} />}
       </div>

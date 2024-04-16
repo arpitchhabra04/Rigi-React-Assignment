@@ -28,17 +28,19 @@
 .attachment-item {
   width: 100%;
   margin-bottom: 10px;
-  box-sizing: border-box; /* Ensure padding and border are included in width */
+  box-sizing: border-box;
 }
 
 .attachment-video {
   width: 100%;
   height: auto;
+  border-radius: 8px;
 }
 
 .attachment-img {
   width: 100%;
   height: auto;
+  border-radius: 8px;
 }
 
 @media (min-width: 768px) {

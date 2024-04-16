@@ -1,7 +1,6 @@
 .single_user_container {
   width: 20wh;
-  height: 30px;
-  margin: 20px;
+  margin: 15px;
   display: flex;
 }
 .single_user_image img {
