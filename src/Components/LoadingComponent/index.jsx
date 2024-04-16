@@ -1,8 +1,9 @@
+import "./index.css";
+
 export default function Loading() {
   return (
-    <div>
-      <img src="../../1.gif" />
-      Loading ....
+    <div className="main-loader">
+      <div>Loading...</div>
     </div>
   );
 }

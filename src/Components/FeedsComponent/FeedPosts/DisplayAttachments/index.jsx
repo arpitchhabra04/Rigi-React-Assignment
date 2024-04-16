@@ -14,7 +14,7 @@ export default function Attachments({ imgs, videos }) {
 
       {imgs.map((img) => (
         <div className="attachment-item" key={img.id}>
-          <img src={img.url} className="attachment-img" />
+          <img src={img.url} loading="lazy" className="attachment-img" />
         </div>
       ))}
     </div>

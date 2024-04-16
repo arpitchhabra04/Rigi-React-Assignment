@@ -3,6 +3,7 @@
   justify-content: space-evenly;
   gap: 100px;
   margin-left: 20%;
+  /* height: 100%; */
 }
 .member-title {
   margin: 20px;
@@ -13,12 +14,19 @@
   max-width: 60%;
 }
 
-.users-container {
-  /* margin-right: 10%; */
-}
-
 .loading-indicator {
   text-align: center;
   padding: 30px;
   font-size: large;
+}
+
+@media (max-width: 640px) {
+  .users-container {
+    display: none;
+  }
+
+  .main_feed_container {
+    width: 100%;
+    margin: 0;
+  }
 }
